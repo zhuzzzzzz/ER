@@ -1,0 +1,63 @@
+MakeBaseApp.pl将生成.gitignore文件:
+#################################
+# Install directories
+/bin/
+/cfg/
+/db/
+/dbd/
+/html/
+/include/
+/lib/
+/templates/
+
+# Local configuration files
+/configure/*.local
+
+# iocBoot generated files
+/iocBoot/*ioc*/cdCommands
+/iocBoot/*ioc*/dllPath.bat
+/iocBoot/*ioc*/envPaths
+/iocBoot/*ioc*/relPaths.sh
+
+# Build directories
+O.*/
+
+# Common files created by other tools
+/QtC-*
+/.vscode/
+*.orig
+*.log
+.*.swp
+.DS_Store
+
+
+###
+注:
+1) .gitignore文件是递归地作用于.gitignore文件当前目录及子目录，不会对上级目录产生影响
+2) .gitignore文件仅跟踪文件而不是目录，也就是说空目录不会对git status的结果产生影响
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+localhost:59818 Tue Jul  4 14:37:22 2023 Starting iocInit
+localhost:59818 Tue Jul  4 14:37:22 2023 reboot_restore: entry for file 'iocStatus_OS-automake.sav'
+localhost:59818 Tue Jul  4 14:37:22 2023 reboot_restore: Found filename 'iocStatus_OS-automake.sav' in restoreFileList.
+localhost:59818 Tue Jul  4 14:37:22 2023 *** restoring from '/home/zhu/ER/IOCs/Status_OS/../../log/autosave/iocStatus_OS/iocStatus_OS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:59818 Tue Jul  4 14:37:22 2023 reboot_restore: done with file 'iocStatus_OS-automake.sav'
+localhost:59818 Tue Jul  4 14:37:22 2023 
+localhost:59818 Tue Jul  4 14:37:22 2023 iocRun: All initialization complete
+localhost:59818 Tue Jul  4 14:37:22 2023 sevr=info caPutLog: successfully initialized
+localhost:51610 Tue Jul  4 14:37:35 2023 Starting iocInit
+localhost:51610 Tue Jul  4 14:37:40 2023 reboot_restore: entry for file 'iocWCS-automake.sav'
+localhost:51610 Tue Jul  4 14:37:40 2023 reboot_restore: Found filename 'iocWCS-automake.sav' in restoreFileList.
+localhost:51610 Tue Jul  4 14:37:40 2023 *** restoring from '/home/zhu/ER/IOCs/WCS/../../log/autosave/iocWCS/iocWCS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:51610 Tue Jul  4 14:37:40 2023 reboot_restore: done with file 'iocWCS-automake.sav'
+localhost:51610 Tue Jul  4 14:37:40 2023 
+localhost:51610 Tue Jul  4 14:37:40 2023 cas WARNING: Configured TCP port was unavailable.
+localhost:51610 Tue Jul  4 14:37:40 2023 cas WARNING: Using dynamically assigned TCP port 41889,
+localhost:51610 Tue Jul  4 14:37:40 2023 cas WARNING: but now two or more servers share the same UDP port.
+localhost:51610 Tue Jul  4 14:37:40 2023 cas WARNING: Depending on your IP kernel this server may not be
+localhost:51610 Tue Jul  4 14:37:40 2023 cas WARNING: reachable with UDP unicast (a host's IP in EPICS_CA_ADDR_LIST)
+localhost:51610 Tue Jul  4 14:37:40 2023 iocRun: All initialization complete
+localhost:51610 Tue Jul  4 14:37:40 2023 sevr=info caPutLog: successfully initialized
+localhost:54076 Tue Jul  4 15:03:18 2023 proc=iocStatus_OSStarting iocInit
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OSreboot_restore: entry for file 'iocStatus_OS-automake.sav'
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OSreboot_restore: Found filename 'iocStatus_OS-automake.sav' in restoreFileList.
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OS*** restoring from '/home/zhu/ER/IOCs/Status_OS/../../log/autosave/iocStatus_OS/iocStatus_OS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OSreboot_restore: done with file 'iocStatus_OS-automake.sav'
+localhost:54076 Tue Jul  4 15:03:23 2023 
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OSiocRun: All initialization complete
+localhost:54076 Tue Jul  4 15:03:23 2023 proc=iocStatus_OSsevr=info caPutLog: successfully initialized
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSStarting iocInit
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSreboot_restore: entry for file 'iocStatus_OS-automake.sav'
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSreboot_restore: Found filename 'iocStatus_OS-automake.sav' in restoreFileList.
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OS*** restoring from '/home/zhu/ER/IOCs/Status_OS/../../log/autosave/iocStatus_OS/iocStatus_OS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSreboot_restore: done with file 'iocStatus_OS-automake.sav'
+localhost:48362 Tue Jul  4 15:03:45 2023 
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSiocRun: All initialization complete
+localhost:48362 Tue Jul  4 15:03:45 2023 proc=iocStatus_OSsevr=info caPutLog: successfully initialized
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS Starting iocInit
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS reboot_restore: entry for file 'iocStatus_OS-automake.sav'
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS reboot_restore: Found filename 'iocStatus_OS-automake.sav' in restoreFileList.
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS *** restoring from '/home/zhu/ER/IOCs/Status_OS/../../log/autosave/iocStatus_OS/iocStatus_OS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS reboot_restore: done with file 'iocStatus_OS-automake.sav'
+localhost:56306 Tue Jul  4 15:05:44 2023 
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS iocRun: All initialization complete
+localhost:56306 Tue Jul  4 15:05:44 2023 IOC:iocStatus_OS sevr=info caPutLog: successfully initialized
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS Starting iocInit
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS reboot_restore: entry for file 'iocWCS-automake.sav'
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS reboot_restore: Found filename 'iocWCS-automake.sav' in restoreFileList.
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS *** restoring from '/home/zhu/ER/IOCs/WCS/../../log/autosave/iocWCS/iocWCS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS reboot_restore: done with file 'iocWCS-automake.sav'
+localhost:33626 Tue Jul  4 15:36:42 2023 
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS cas WARNING: Configured TCP port was unavailable.
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS cas WARNING: Using dynamically assigned TCP port 45525,
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS cas WARNING: but now two or more servers share the same UDP port.
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS cas WARNING: Depending on your IP kernel this server may not be
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS cas WARNING: reachable with UDP unicast (a host's IP in EPICS_CA_ADDR_LIST)
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS iocRun: All initialization complete
+localhost:33626 Tue Jul  4 15:36:42 2023 iocWCS sevr=info caPutLog: successfully initialized
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS Starting iocInit
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS Forward-link uses Channel Access without pointing to PROC field
+localhost:55974 Tue Jul  4 15:38:05 2023     iocWCS:FD_CNT.FLNK => iocWCS:FD_FREE
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:TIMEZONE
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_ADDR_LIST
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_AUTO_ADDR
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BEACON_PERIOD
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BROADCAST_PORT
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_CONN_TMO
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_DEBUG
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_SERVER_PORT
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_AUTO_BEACON_ADDR_LIST
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_ADDR_LIST
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_PERIOD
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BROADCAST_PORT
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_SERVER_PORT
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS reboot_restore: entry for file 'iocWCS-automake.sav'
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS reboot_restore: Found filename 'iocWCS-automake.sav' in restoreFileList.
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS *** restoring from '/home/zhu/ER/IOCs/WCS/../../log/autosave/iocWCS/iocWCS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS reboot_restore: done with file 'iocWCS-automake.sav'
+localhost:55974 Tue Jul  4 15:38:05 2023 
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS cas WARNING: Configured TCP port was unavailable.
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS cas WARNING: Using dynamically assigned TCP port 37193,
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS cas WARNING: but now two or more servers share the same UDP port.
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS cas WARNING: Depending on your IP kernel this server may not be
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS cas WARNING: reachable with UDP unicast (a host's IP in EPICS_CA_ADDR_LIST)
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS iocRun: All initialization complete
+localhost:55974 Tue Jul  4 15:38:05 2023 iocWCS sevr=info caPutLog: successfully initialized
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS Starting iocInit
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS Forward-link uses Channel Access without pointing to PROC field
+localhost:46728 Tue Jul  4 15:51:36 2023     iocWCS:FD_CNT.FLNK => iocWCS:FD_FREE
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:TIMEZONE
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_ADDR_LIST
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_AUTO_ADDR
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BEACON_PERIOD
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BROADCAST_PORT
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_CONN_TMO
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_DEBUG
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_SERVER_PORT
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_AUTO_BEACON_ADDR_LIST
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_ADDR_LIST
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_PERIOD
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BROADCAST_PORT
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_SERVER_PORT
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS reboot_restore: entry for file 'iocWCS-automake.sav'
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS reboot_restore: Found filename 'iocWCS-automake.sav' in restoreFileList.
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS *** restoring from '/home/zhu/ER/IOCs/WCS/../../log/autosave/iocWCS/iocWCS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS reboot_restore: done with file 'iocWCS-automake.sav'
+localhost:46728 Tue Jul  4 15:51:36 2023 
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS iocRun: All initialization complete
+localhost:46728 Tue Jul  4 15:51:36 2023 iocWCS sevr=info caPutLog: successfully initialized
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS Starting iocInit
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS Forward-link uses Channel Access without pointing to PROC field
+localhost:33832 Tue Jul  4 15:53:58 2023     iocWCS:FD_CNT.FLNK => iocWCS:FD_FREE
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:TIMEZONE
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_ADDR_LIST
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_AUTO_ADDR
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BEACON_PERIOD
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_BROADCAST_PORT
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_CONN_TMO
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_DEBUG
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVA_SERVER_PORT
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_AUTO_BEACON_ADDR_LIST
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_ADDR_LIST
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BEACON_PERIOD
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_BROADCAST_PORT
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS recGblRecordError: devStringinEpics (init_record) INP field is not an EPICS env var Illegal field value PV: iocWCS:PVAS_SERVER_PORT
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS reboot_restore: entry for file 'iocWCS-automake.sav'
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS reboot_restore: Found filename 'iocWCS-automake.sav' in restoreFileList.
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS *** restoring from '/home/zhu/ER/IOCs/WCS/../../log/autosave/iocWCS/iocWCS-automake.sav' at initHookState 7 (after record/device init) ***
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS reboot_restore: done with file 'iocWCS-automake.sav'
+localhost:33832 Tue Jul  4 15:53:58 2023 
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS iocRun: All initialization complete
+localhost:33832 Tue Jul  4 15:53:58 2023 iocWCS sevr=info caPutLog: successfully initialized

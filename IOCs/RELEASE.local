@@ -1,0 +1,4 @@
+caPutLog = /home/zhu/EPICS/Module/caPutLog
+AUTOSAVE = /home/zhu/EPICS/Module/autosave-R5-10-2
+IOCADMIN=/home/zhu/EPICS/Module/iocStats
+

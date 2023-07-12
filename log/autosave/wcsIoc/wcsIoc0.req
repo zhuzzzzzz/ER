@@ -1,0 +1,43 @@
+run:state:$(num).VAL
+ctrl:mode:$(num).VAL
+water:temp0:$(num).VAL
+water:fluc:$(num).VAL
+set:temp:$(num).VAL
+fault:ctrl:$(num).VAL
+
+#record(calc, "water:temp:$(num)")
+
+dev:temp:$(num).VAL
+dev:thermometer:$(num).VAL
+dev:thermometer:$(num).HIGH
+dev:thermometer:$(num).HIHI
+water:valve:$(num).VAL
+water:valve:$(num).OMSL
+water:flowmeter:$(num).VAL
+water:flowmeter:$(num).LOW
+water:flowmeter:$(num).LOLO
+
+#record(calcout,"temp:calc:$(num)")
+
+kp:$(num).VAL
+ki:$(num).VAL
+kd:$(num).VAL
+
+#record(calc, "error:$(num)")
+#record(calc, "error:integral:$(num)")
+#record(calc, "error:difference:$(num)")
+#record(calc, "pid:calc:$(num)")
+
+device:alarm:$(num).VAL
+opi:flag:$(num).VAL
+temp:flag:$(num).VAL
+flowmeter:flag:$(num).VAL
+temp:state:$(num).VAL
+flowmeter:state:$(num).VAL
+
+#record(calcout, "interlock:logic:$(num)")
+#record(calcout, "stop:control:$(num)")
+
+global:ctrl:$(num).VAL
+global:interlock:logic:$(num).VAL
+

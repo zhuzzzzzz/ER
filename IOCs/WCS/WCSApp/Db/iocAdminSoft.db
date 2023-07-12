@@ -1,0 +1,674 @@
+
+# if autosave is working, START_CNT creates a running count of 
+# number of times the IOC was started.
+record(calcout, "$(IOC):START_CNT")
+{
+    field(DESC, "Increments at startup")
+    field(CALC, "A+1")
+    field(PINI, "YES")
+    field(INPA, "$(IOC):START_CNT")
+    info(autosaveFields_pass0, "VAL")
+}
+
+
+
+
+record(stringin, "$(IOC):ST_SCRIPT1") {
+  field(DESC, "Startup Script Part1")
+  field(DTYP, "IOC stats")
+  field(INP, "@startup_script_1")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(IOC):ST_SCRIPT2") {
+  field(DESC, "Startup Script Part2")
+  field(DTYP, "IOC stats")
+  field(INP, "@startup_script_2")
+  field(PINI, "YES")
+}
+
+record(waveform, "$(IOC):EPICS_VERSION") {
+  field(DESC, "EPICS Version")
+  field(DTYP, "IOC stats")
+  field(INP, "@epics_ver")
+  field(NELM, "120")
+  field(FTVL, "CHAR")
+  field(PINI, "YES")
+}
+
+
+record(stringin, "$(IOC):APP_DIR1") {
+  field(DESC, "Application Directory Part 1")
+  field(DTYP, "IOC stats")
+  field(INP, "@pwd1")
+  field(PINI, "YES")
+}
+
+record(stringin, "$(IOC):APP_DIR2") {
+  field(DESC, "Application Directory Part 2")
+  field(DTYP, "IOC stats")
+  field(INP, "@pwd2")
+  field(PINI, "YES")
+}
+
+
+record(ai, "$(IOC):SCANONCE_Q_SIZE") {
+  field(DESC, "max # entries in IOC scanOnce queue")
+  field(DTYP, "IOC stats")
+  field(INP,  "@scanOnceQueueSize")
+  field(PINI, "YES")
+}
+record(ai, "$(IOC):CB_Q_SIZE") {
+  field(DESC, "max # entries in IOC callback queues")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbQueueSize")
+  field(PINI, "YES")
+}
+
+record(ai, "$(IOC):SCANONCE_Q_HIGH") {
+  field(DESC, "max # of elmts in IOC's scanOnce queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@scanOnceQueueHiWtrMrk")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):SCANONCE_Q_HIGHPER")
+}
+
+record(calc, "$(IOC):SCANONCE_Q_HIGHPER") {
+  field(DESC, "Max. usage of IOC's scanOnce queue")
+  field(INPA, "$(IOC):SCANONCE_Q_HIGH NPP MS")
+  field(INPB, "$(IOC):SCANONCE_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):SCANONCE_Q_USED") {
+  field(DESC, "# of entries in IOC's scanOnce queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@scanOnceQueueUsed")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):SCANONCE_Q_USEDPER")
+}
+
+record(calc, "$(IOC):SCANONCE_Q_USEDPER") {
+  field(DESC, "Percentage of IOC's scanOnce queue used")
+  field(INPA, "$(IOC):SCANONCE_Q_USED NPP MS")
+  field(INPB, "$(IOC):SCANONCE_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):SCANONCE_Q_OVERRUNS") {
+  field(DESC, "# of overruns of IOC's scanOnce queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@scanOnceQueueOverruns")
+  field(PINI, "YES")
+}
+
+record(ai, "$(IOC):CBLOW_Q_HIGH") {
+  field(DESC, "max # of elmts in IOC's cbLow queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbLowQueueHiWtrMrk")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBLOW_Q_HIGHPER")
+}
+
+record(calc, "$(IOC):CBLOW_Q_HIGHPER") {
+  field(DESC, "Max. usage of IOC's cbLow queue")
+  field(INPA, "$(IOC):CBLOW_Q_HIGH NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBLOW_Q_USED") {
+  field(DESC, "# of entries in IOC's cbLow queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbLowQueueUsed")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBLOW_Q_USEDPER")
+}
+
+record(calc, "$(IOC):CBLOW_Q_USEDPER") {
+  field(DESC, "Percentage of IOC's cbLow queue used")
+  field(INPA, "$(IOC):CBLOW_Q_USED NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBLOW_Q_OVERRUNS") {
+  field(DESC, "# of overruns of IOC's cbLow queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbLowQueueOverruns")
+  field(PINI, "YES")
+}
+
+record(ai, "$(IOC):CBMEDIUM_Q_HIGH") {
+  field(DESC, "max # of elmts in IOC's cbMedium queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbMediumQueueHiWtrMrk")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBMEDIUM_Q_HIGHPER")
+}
+
+record(calc, "$(IOC):CBMEDIUM_Q_HIGHPER") {
+  field(DESC, "Max. usage of IOC's cbMedium queue")
+  field(INPA, "$(IOC):CBMEDIUM_Q_HIGH NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBMEDIUM_Q_USED") {
+  field(DESC, "# of entries in IOC's cbMedium queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbMediumQueueUsed")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBMEDIUM_Q_USEDPER")
+}
+
+record(calc, "$(IOC):CBMEDIUM_Q_USEDPER") {
+  field(DESC, "Percentage of IOC's cbMedium queue used")
+  field(INPA, "$(IOC):CBMEDIUM_Q_USED NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBMEDIUM_Q_OVERRUNS") {
+  field(DESC, "# of overruns of IOC's cbMedium queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbMediumQueueOverruns")
+  field(PINI, "YES")
+}
+
+record(ai, "$(IOC):CBHIGH_Q_HIGH") {
+  field(DESC, "max # of elmts in IOC's cbHigh queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbHighQueueHiWtrMrk")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBHIGH_Q_HIGHPER")
+}
+
+record(calc, "$(IOC):CBHIGH_Q_HIGHPER") {
+  field(DESC, "Max. usage of IOC's cbHigh queue")
+  field(INPA, "$(IOC):CBHIGH_Q_HIGH NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBHIGH_Q_USED") {
+  field(DESC, "# of entries in IOC's cbHigh queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbHighQueueUsed")
+  field(PINI, "YES")
+  field(FLNK, "$(IOC):CBHIGH_Q_USEDPER")
+}
+
+record(calc, "$(IOC):CBHIGH_Q_USEDPER") {
+  field(DESC, "Percentage of IOC's cbHigh queue used")
+  field(INPA, "$(IOC):CBHIGH_Q_USED NPP MS")
+  field(INPB, "$(IOC):CB_Q_SIZE NPP MS")
+  field(CALC, "100*A/B")
+  field(LOPR, "0")
+  field(HOPR, "100")
+  field(EGU,  "%")
+}
+
+record(ai, "$(IOC):CBHIGH_Q_OVERRUNS") {
+  field(DESC, "# of overruns of IOC's cbHigh queue")
+  field(SCAN, "I/O Intr")
+  field(DTYP, "IOC stats")
+  field(INP,  "@cbHighQueueOverruns")
+  field(PINI, "YES")
+}
+
+
+
+record(ai, "$(IOC):GTIM_TIME") {
+  field(DESC, "Gen Time Secs since 1990")
+  field(SCAN, "1 second")
+  field(DTYP, "General Time")
+  field(PREC, "3")
+  field(INP,  "@TIME")
+  field(EGU,  "sec")
+}
+
+record(bo, "$(IOC):GTIM_RESET") {
+  field(DESC, "Gen Time Error Reset")
+  field(DTYP, "General Time")
+  field(OUT,  "@RSTERRCNT")
+  field(ZNAM, "Reset")
+  field(ONAM, "Reset")
+}
+
+record(longin, "$(IOC):GTIM_ERR_CNT") {
+  field(DESC, "Gen Time Error Count")
+  field(DTYP, "General Time")
+  field(INP,  "@GETERRCNT")
+  field(SCAN, "1 second")
+  field(HIHI, "1")
+  field(HHSV, "MAJOR")
+}
+
+record(stringin, "$(IOC):GTIM_CUR_SRC") {
+  field(DESC, "Gen Time Current Provider")
+  field(DTYP, "General Time")
+  field(INP,  "@BESTTCP")
+  field(SCAN, "1 second")
+}
+
+record(stringin, "$(IOC):GTIM_EVT_SRC") {
+  field(DESC, "Gen Time Event Provider")
+  field(DTYP, "General Time")
+  field(INP,  "@BESTTEP")
+  field(SCAN, "1 second")
+}
+
+record(stringin, "$(IOC):GTIM_HI_SRC") {
+  field(DESC, "Gen Time Highest Provider")
+  field(DTYP, "General Time")
+  field(INP,  "@TOPTCP")
+  field(SCAN, "1 second")
+}
+record(bo, "$(IOC):01HZ_MODE") {
+	field(DESC, "01HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):01HZ_UPD_TIME") {
+	field(DESC, "01HZ Update Time")
+	field(SCAN, "10 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):01HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):02HZ_MODE") {
+	field(DESC, "02HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):02HZ_UPD_TIME") {
+	field(DESC, "02HZ Update Time")
+	field(SCAN, "5 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):02HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):05HZ_MODE") {
+	field(DESC, "05HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):05HZ_UPD_TIME") {
+	field(DESC, "05HZ Update Time")
+	field(SCAN, "2 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):05HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):1HZ_MODE") {
+	field(DESC, "1HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):1HZ_UPD_TIME") {
+	field(DESC, "1HZ Update Time")
+	field(SCAN, "1 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):1HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):2HZ_MODE") {
+	field(DESC, "2HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):2HZ_UPD_TIME") {
+	field(DESC, "2HZ Update Time")
+	field(SCAN, ".5 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):2HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):5HZ_MODE") {
+	field(DESC, "5HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):5HZ_UPD_TIME") {
+	field(DESC, "5HZ Update Time")
+	field(SCAN, ".2 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):5HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+record(bo, "$(IOC):10HZ_MODE") {
+	field(DESC, "10HZ Mode")
+	field(DOL, "1")
+	field(PINI, "YES")
+	field(ZNAM, "Relative")
+	field(ONAM, "Absolute")
+}
+record(sub, "$(IOC):10HZ_UPD_TIME") {
+	field(DESC, "10HZ Update Time")
+	field(SCAN, ".1 second")
+	field(EGU, "second")
+	field(PREC, "5")
+	field(MDEL, "0.00001")
+	field(HYST, "0.00002")
+	field(INAM, "scanMonInit")
+	field(SNAM, "scanMon")
+	field(HHSV, "MAJOR")
+	field(HSV, "MINOR")
+	field(LSV, "MINOR")
+	field(LLSV, "MAJOR")
+	field(BRSV, "INVALID")
+	field(INPA, "$(IOC):10HZ_MODE")
+	field(B,    "1.0")
+	field(C,    "5.0")
+}
+
+record(calc, "$(IOC):SCANMON_SEVR") {
+    field(DESC, "ScanMon Max Severity")
+    field(SCAN, "1 second")
+    field(CALC, "0")
+    field(INPA, "$(IOC):01HZ_UPD_TIME.SEVR MS")
+    field(INPB, "$(IOC):02HZ_UPD_TIME.SEVR MS")
+    field(INPC, "$(IOC):05HZ_UPD_TIME.SEVR MS")
+    field(INPD, "$(IOC):1HZ_UPD_TIME.SEVR MS")
+    field(INPE, "$(IOC):2HZ_UPD_TIME.SEVR MS")
+    field(INPF, "$(IOC):5HZ_UPD_TIME.SEVR MS")
+    field(INPG, "$(IOC):10HZ_UPD_TIME.SEVR MS")
+}
+
+record(stringin, "$(IOC):CA_ADDR_LIST") {
+  field(DESC, "EPICS_CA_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_CONN_TIME") {
+  field(DESC, "EPICS_CA_CONN_TMO")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_CONN_TMO")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_AUTO_ADDR") {
+  field(DESC, "EPICS_CA_AUTO_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_AUTO_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_RPTR_PORT") {
+  field(DESC, "EPICS_CA_REPEATER_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_REPEATER_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_SRVR_PORT") {
+  field(DESC, "EPICS_CA_SERVER_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_SERVER_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_MAX_ARRAY") {
+  field(DESC, "EPICS_CA_MAX_ARRAY_BYTES")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_MAX_ARRAY_BYTES")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_SRCH_TIME") {
+  field(DESC, "EPICS_CA_MAX_SEARCH_PERIOD")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_MAX_SEARCH_PERIOD")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CA_BEAC_TIME") {
+  field(DESC, "EPICS_CA_BEACON_PERIOD")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CA_BEACON_PERIOD")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_SRVR_PORT") {
+  field(DESC, "EPICS_CAS_SERVER_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_SERVER_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_AUTO_ADDR") {
+  field(DESC, "EPICS_CAS_AUTO_BEACON_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_AUTO_BEACON_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_ADDR_LIST") {
+  field(DESC, "EPICS_CAS_BEACON_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_BEACON_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_BEACON_PERIOD") {
+  field(DESC, "EPICS_CAS_BEACON_PERIOD")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_BEACON_PERIOD")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_BEACON_PORT") {
+  field(DESC, "EPICS_CAS_BEACON_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_BEACON_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_ADDR_INTF_LIST") {
+  field(DESC, "EPICS_CAS_INTF_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_INTF_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):CAS_ADDR_IGNORE_LIST") {
+  field(DESC, "EPICS_CAS_IGNORE_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_CAS_IGNORE_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):TIMEZONE") {
+  field(DESC, "EPICS_TIMEZONE")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_TIMEZONE")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):TS_NTP_INET") {
+  field(DESC, "EPICS_TS_NTP_INET")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_TS_NTP_INET")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):IOC_LOG_PORT") {
+  field(DESC, "EPICS_IOC_LOG_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_IOC_LOG_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):IOC_LOG_INET") {
+  field(DESC, "EPICS_IOC_LOG_INET")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_IOC_LOG_INET")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_ADDR_LIST") {
+  field(DESC, "EPICS_PVA_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_AUTO_ADDR") {
+  field(DESC, "EPICS_PVA_AUTO_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_AUTO_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_BEACON_PERIOD") {
+  field(DESC, "EPICS_PVA_BEACON_PERIOD")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_BEACON_PERIOD")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_BROADCAST_PORT") {
+  field(DESC, "EPICS_PVA_BROADCAST_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_BROADCAST_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_CONN_TMO") {
+  field(DESC, "EPICS_PVA_CONN_TMO")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_CONN_TMO")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_DEBUG") {
+  field(DESC, "EPICS_PVA_DEBUG")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_DEBUG")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVA_SERVER_PORT") {
+  field(DESC, "EPICS_PVA_SERVER_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVA_SERVER_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVAS_AUTO_BEACON_ADDR_LIST") {
+  field(DESC, "EPICS_PVAS_AUTO_BEACON_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVAS_AUTO_BEACON_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVAS_BEACON_ADDR_LIST") {
+  field(DESC, "EPICS_PVAS_BEACON_ADDR_LIST")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVAS_BEACON_ADDR_LIST")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVAS_BEACON_PERIOD") {
+  field(DESC, "EPICS_PVAS_BEACON_PERIOD")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVAS_BEACON_PERIOD")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVAS_BROADCAST_PORT") {
+  field(DESC, "EPICS_PVAS_BROADCAST_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVAS_BROADCAST_PORT")
+  field(PINI, "YES")
+}
+record(stringin, "$(IOC):PVAS_SERVER_PORT") {
+  field(DESC, "EPICS_PVAS_SERVER_PORT")
+  field(DTYP, "IOC epics var")
+  field(INP, "@EPICS_PVAS_SERVER_PORT")
+  field(PINI, "YES")
+}

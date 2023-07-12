@@ -1,0 +1,18 @@
+# autosave R5.3	Automatically generated - DO NOT MODIFY - 230704-143729
+iocStatus_OS:MEM_FREE.HOPR 0
+iocStatus_OS:MEM_FREE.LOPR 0
+iocStatus_OS:MEM_FREE.LOW 0
+iocStatus_OS:MEM_FREE.LOLO 0
+iocStatus_OS:MEM_FREE.LSV 1
+iocStatus_OS:MEM_FREE.LLSV 2
+iocStatus_OS:SYS_CPU_LOAD.HOPR 100
+iocStatus_OS:SYS_CPU_LOAD.LOPR 0
+iocStatus_OS:SYS_CPU_LOAD.HIHI 80
+iocStatus_OS:SYS_CPU_LOAD.HIGH 70
+iocStatus_OS:SYS_CPU_LOAD.LOW 0
+iocStatus_OS:SYS_CPU_LOAD.LOLO 0
+iocStatus_OS:SYS_CPU_LOAD.HHSV 2
+iocStatus_OS:SYS_CPU_LOAD.HSV 1
+iocStatus_OS:SYS_CPU_LOAD.LSV 0
+iocStatus_OS:SYS_CPU_LOAD.LLSV 0
+<END>

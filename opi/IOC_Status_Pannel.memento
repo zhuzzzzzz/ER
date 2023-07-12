@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<memento show_menu="true" show_statusbar="true" show_tabs="true" show_toolbar="true">
+    <DockStage_1579d545_6f0c_4930_aba8_1c720d404f90 height="746.0" width="423.0" x="874.0" y="165.0">
+        <pane selected="0">
+            <DockItem_aba7e48f_cde0_4ed5_b019_bdd13ab36e10 application="display_runtime" input_uri="file:/home/zhu/ER/opi/iocWCS/ioc_status.bob" toolbar="true"/>
+        </pane>
+    </DockStage_1579d545_6f0c_4930_aba8_1c720d404f90>
+</memento>
